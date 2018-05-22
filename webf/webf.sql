@@ -1,0 +1,660 @@
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : localhost-33333
+Source Server Version : 50627
+Source Host           : localhost:33333
+Source Database       : webf
+
+Target Server Type    : MYSQL
+Target Server Version : 50627
+File Encoding         : 65001
+
+Date: 2018-04-27 15:12:49
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for `sys_app`
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_app`;
+CREATE TABLE `sys_app` (
+  `APP_ID` varchar(30) NOT NULL,
+  `APP_NAME` char(10) DEFAULT NULL,
+  `APP_KEY` varchar(32) DEFAULT NULL,
+  `APP_SECRET` varchar(32) DEFAULT NULL,
+  `IS_DISABLE` varchar(1) DEFAULT NULL,
+  `IS_DEL` varchar(1) DEFAULT NULL,
+  `NOTE` varchar(1024) DEFAULT NULL,
+  PRIMARY KEY (`APP_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sys_app
+-- ----------------------------
+INSERT INTO `sys_app` VALUES ('201804171211530000010741183288', 'TEST', 'ad908e1b6e524b3e8de7d7886b451506', 'cd68dca11c3e45398cd879c22d5afc19', '0', '0', null);
+
+-- ----------------------------
+-- Table structure for `sys_control`
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_control`;
+CREATE TABLE `sys_control` (
+  `CONTROL_ID` varchar(30) NOT NULL,
+  `CONTROL_GROUP_ID` varchar(30) DEFAULT NULL,
+  `CONTROL_MEMONI` varchar(128) DEFAULT NULL,
+  `CONTROL_NAME` varchar(128) DEFAULT NULL,
+  `CLASS_METHODS` varchar(1024) DEFAULT NULL,
+  `IS_DEL` varchar(1) DEFAULT NULL,
+  `NOTE` varchar(1024) DEFAULT NULL,
+  PRIMARY KEY (`CONTROL_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sys_control
+-- ----------------------------
+INSERT INTO `sys_control` VALUES ('201112241038200000010246740694', '201112241037200000010246740694', 'com.proj.sys.SysDictAction@add', '新增字典', 'com.proj.sys.SysDictAction@add\r\ncom.proj.sys.SysDictAction@addSave', '0', '');
+INSERT INTO `sys_control` VALUES ('201112241038550000010246740694', '201112241037200000010246740694', 'com.proj.sys.SysDictAction@edit', '修改字典', 'com.proj.sys.SysDictAction@edit\r\ncom.proj.sys.SysDictAction@editSave', '0', '');
+INSERT INTO `sys_control` VALUES ('201112241039250000010246740694', '201112241037200000010246740694', 'com.proj.sys.SysDictAction@deletes', '删除字典', 'com.proj.sys.SysDictAction@deletes', '0', '');
+INSERT INTO `sys_control` VALUES ('201112241042040000010246740694', '201112241037200000010246740694', 'com.proj.sys.SysDictItemAction@add', '新增字典项', 'com.proj.sys.SysDictItemAction@add\r\ncom.proj.sys.SysDictItemAction@addSave', '0', '');
+INSERT INTO `sys_control` VALUES ('201112241042380000010246740694', '201112241037200000010246740694', 'com.proj.sys.SysDictItemAction@edit', '修改字典项', 'com.proj.sys.SysDictItemAction@edit\r\ncom.proj.sys.SysDictItemAction@editSave', '0', '');
+INSERT INTO `sys_control` VALUES ('201112241042580000010246740694', '201112241037200000010246740694', 'com.proj.sys.SysDictItemAction@deletes', '删除字典项', 'com.proj.sys.SysDictItemAction@deletes', '0', '');
+INSERT INTO `sys_control` VALUES ('201112241049300000010246740694', '201112241037200000010246740694', 'com.proj.sys.SysDictMappingAction@add', '新增字典映射', 'com.proj.sys.SysDictMappingAction@add\r\ncom.proj.sys.SysDictMappingAction@addSave', '0', '');
+INSERT INTO `sys_control` VALUES ('201112241050050000010246740694', '201112241037200000010246740694', 'com.proj.sys.SysDictMappingAction@edit', '修改字典映射', 'com.proj.sys.SysDictMappingAction@edit\r\ncom.proj.sys.SysDictMappingAction@editSave', '0', '');
+INSERT INTO `sys_control` VALUES ('201112241050380000010246740694', '201112241037200000010246740694', 'com.proj.sys.SysDictMappingAction@deletes', '删除字典映射', 'com.proj.sys.SysDictMappingAction@deletes', '0', '');
+INSERT INTO `sys_control` VALUES ('201112241052350000010246740694', '201112241037200000010246740694', 'com.proj.sys.SysDictMappingItemAction@add', '新增字典映射项', 'com.proj.sys.SysDictMappingItemAction@add\r\ncom.proj.sys.SysDictMappingItemAction@addSave', '0', '');
+INSERT INTO `sys_control` VALUES ('201112241053010000010246740694', '201112241037200000010246740694', 'com.proj.sys.SysDictMappingItemAction@edit', '修改字典映射项', 'com.proj.sys.SysDictMappingItemAction@edit\r\ncom.proj.sys.SysDictMappingItemAction@editSave', '0', '');
+INSERT INTO `sys_control` VALUES ('201112241053250000010246740694', '201112241037200000010246740694', 'com.proj.sys.SysDictMappingItemAction@deletes', '删除字典映射项', 'com.proj.sys.SysDictMappingItemAction@deletes', '0', '');
+INSERT INTO `sys_control` VALUES ('201112241054490000010246740694', '201112241054120000010246740694', 'com.proj.sys.SysOrgAction@add', '新增机构', 'com.proj.sys.SysOrgAction@add\r\ncom.proj.sys.SysOrgAction@addSave', '0', '');
+INSERT INTO `sys_control` VALUES ('201112241055080000010246740694', '201112241054120000010246740694', 'com.proj.sys.SysOrgAction@edit', '修改机构', 'com.proj.sys.SysOrgAction@edit\r\ncom.proj.sys.SysOrgAction@editSave', '0', '');
+INSERT INTO `sys_control` VALUES ('201112241055280000010246740694', '201112241054120000010246740694', 'com.proj.sys.SysOrgAction@deletes', '删除机构', 'com.proj.sys.SysOrgAction@deletes', '0', '');
+INSERT INTO `sys_control` VALUES ('201112241056060000010246740694', '201112241054120000010246740694', 'com.proj.sys.SysDeptAction@add', '新增部门', 'com.proj.sys.SysDeptAction@add\r\ncom.proj.sys.SysDeptAction@addSave', '0', '');
+INSERT INTO `sys_control` VALUES ('201112241056270000010246740694', '201112241054120000010246740694', 'com.proj.sys.SysDeptAction@edit', '修改部门', 'com.proj.sys.SysDeptAction@edit\r\ncom.proj.sys.SysDeptAction@editSave', '0', '');
+INSERT INTO `sys_control` VALUES ('201112241056510000010246740694', '201112241054120000010246740694', 'com.proj.sys.SysDeptAction@deletes', '删除部门', 'com.proj.sys.SysDeptAction@deletes', '0', '');
+INSERT INTO `sys_control` VALUES ('201112241057180000010246740694', '201112241054120000010246740694', 'com.proj.sys.SysOfficerAction@add', '新增岗位', 'com.proj.sys.SysOfficerAction@add\r\ncom.proj.sys.SysOfficerAction@addSave', '0', '');
+INSERT INTO `sys_control` VALUES ('201112241057350000010246740694', '201112241054120000010246740694', 'com.proj.sys.SysOfficerAction@edit', '修改岗位', 'com.proj.sys.SysOfficerAction@edit\r\ncom.proj.sys.SysOfficerAction@editSave', '0', '');
+INSERT INTO `sys_control` VALUES ('201112241057500000010246740694', '201112241054120000010246740694', 'com.proj.sys.SysOfficerAction@deletes', '删除岗位', 'com.proj.sys.SysOfficerAction@deletes', '0', '');
+INSERT INTO `sys_control` VALUES ('201112241103080000010246740694', '201112241100590000010246740694', 'com.proj.sys.SysUserAction@add', '新增用户', 'com.proj.sys.SysUserAction@add\r\ncom.proj.sys.SysUserAction@addSave', '0', '');
+INSERT INTO `sys_control` VALUES ('201112241103270000010246740694', '201112241100590000010246740694', 'com.proj.sys.SysUserAction@edit', '修改用户', 'com.proj.sys.SysUserAction@edit\r\ncom.proj.sys.SysUserAction@editSave', '0', '');
+INSERT INTO `sys_control` VALUES ('201112241103450000010246740694', '201112241100590000010246740694', 'com.proj.sys.SysUserAction@deletes', '删除用户', 'com.proj.sys.SysUserAction@deletes', '0', '');
+INSERT INTO `sys_control` VALUES ('201112241106030000010246740694', '201112241100590000010246740694', 'com.proj.sys.SysUserAction@resetPassword', '重置密码', 'com.proj.sys.SysUserAction@resetPassword\r\ncom.proj.sys.SysUserAction@resetSavePassword', '0', '');
+INSERT INTO `sys_control` VALUES ('201112241106550000010246740694', '201112241100590000010246740694', 'com.proj.sys.SysUserAction@editSaveIsDisable', '启（禁）用用户', 'com.proj.sys.SysUserAction@editSaveIsDisable', '0', '');
+INSERT INTO `sys_control` VALUES ('201112241111110000010246740694', '201112241100590000010246740694', 'com.proj.sys.SysOfficerPrivilegeAction@editPrivilegeGroup', '设置岗位权限（权限组）', 'com.proj.sys.SysOfficerPrivilegeAction@editPrivilegeGroup\r\ncom.proj.sys.SysOfficerPrivilegeAction@editSavePrivilegeGroup', '0', '');
+INSERT INTO `sys_control` VALUES ('201112241120400000010246740694', '201112241100590000010246740694', 'com.proj.sys.SysOfficerPrivilegeAction@editPrivilegeMenu', '设置岗位权限（菜单）', 'com.proj.sys.SysOfficerPrivilegeAction@editPrivilegeMenu\r\ncom.proj.sys.SysOfficerPrivilegeAction@editSavePrivilegeMenu', '0', '');
+INSERT INTO `sys_control` VALUES ('201112241121340000010246740694', '201112241100590000010246740694', 'com.proj.sys.SysOfficerPrivilegeAction@editPrivilegeControl', '设置岗位权限（控件）', 'com.proj.sys.SysOfficerPrivilegeAction@editPrivilegeControl\r\ncom.proj.sys.SysOfficerPrivilegeAction@editSavePrivilegeControl', '0', '');
+INSERT INTO `sys_control` VALUES ('201112241123520000010246740694', '201112241100590000010246740694', 'com.proj.sys.SysOfficerPrivilegeAction@edit', '设置岗位权限（入口）', 'com.proj.sys.SysOfficerPrivilegeAction@edit', '0', '');
+INSERT INTO `sys_control` VALUES ('201112251307400000010424445799', '201112241100590000010246740694', 'com.proj.sys.SysUserOfficerAction@query', '设置岗位', 'com.proj.sys.SysUserOfficerAction@main', '0', '');
+
+-- ----------------------------
+-- Table structure for `sys_control_group`
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_control_group`;
+CREATE TABLE `sys_control_group` (
+  `CONTROL_GROUP_ID` varchar(30) NOT NULL,
+  `GROUP_NAME` varchar(128) DEFAULT NULL,
+  `IS_DEL` varchar(1) DEFAULT NULL,
+  `NOTE` varchar(1024) DEFAULT NULL,
+  PRIMARY KEY (`CONTROL_GROUP_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sys_control_group
+-- ----------------------------
+INSERT INTO `sys_control_group` VALUES ('201112241037200000010246740694', '系统字典管理', '0', '');
+INSERT INTO `sys_control_group` VALUES ('201112241054120000010246740694', '组织机构管理', '0', '');
+INSERT INTO `sys_control_group` VALUES ('201112241100590000010246740694', '安全管理', '0', '');
+
+-- ----------------------------
+-- Table structure for `sys_dept`
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_dept`;
+CREATE TABLE `sys_dept` (
+  `DEPT_ID` varchar(30) NOT NULL,
+  `ORG_ID` varchar(30) DEFAULT NULL,
+  `DEPT_PID` varchar(30) DEFAULT NULL,
+  `DEPT_NAME` varchar(128) DEFAULT NULL,
+  `DEPT_ATTR` varchar(64) DEFAULT NULL,
+  `SORT` int(11) DEFAULT NULL,
+  `IS_SYS` varchar(1) DEFAULT NULL,
+  `IS_DEL` varchar(1) DEFAULT NULL,
+  `NOTE` varchar(1024) DEFAULT NULL,
+  PRIMARY KEY (`DEPT_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sys_dept
+-- ----------------------------
+INSERT INTO `sys_dept` VALUES ('000000000000000000000000000000', '000000000000000000000000000000', null, '信息管理部', null, '1', '1', '0', null);
+
+-- ----------------------------
+-- Table structure for `sys_dict`
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_dict`;
+CREATE TABLE `sys_dict` (
+  `DICT_ID` varchar(30) NOT NULL,
+  `DICT_MEMONI` varchar(128) DEFAULT NULL,
+  `DICT_NAME` varchar(128) DEFAULT NULL,
+  `NOTE` varchar(1024) DEFAULT NULL,
+  PRIMARY KEY (`DICT_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sys_dict
+-- ----------------------------
+INSERT INTO `sys_dict` VALUES ('201112241000230000010928758633', 'COLOR', '文字显示颜色', '');
+INSERT INTO `sys_dict` VALUES ('201112241001420000010928758633', 'BOOL', '布尔值', '');
+INSERT INTO `sys_dict` VALUES ('201112241004260000010928758633', 'SYS_LOG_TYPE', '系统日志类型', '');
+INSERT INTO `sys_dict` VALUES ('201112242518800000102042989663', 'ORG_ATTR', '机构属性', '');
+INSERT INTO `sys_dict` VALUES ('201112242517800000102042989663', 'DEPT_ATTR', '部门属性', '');
+INSERT INTO `sys_dict` VALUES ('201112242516800000102042989663', 'OFFICER_ATTR', '岗位属性', '');
+INSERT INTO `sys_dict` VALUES ('201112242515800000102042989663', 'USER_OFFICER_TYPE', '用户岗位类型', '');
+INSERT INTO `sys_dict` VALUES ('201112242311590000010204298967', 'SEX', '性别', '');
+INSERT INTO `sys_dict` VALUES ('201310311413190000010848095950', 'REST_VERSION', 'Rest接口版本', '');
+INSERT INTO `sys_dict` VALUES ('201804271508400000010559203238', 'CLIENT_TYPE', '客户端类型', '');
+
+-- ----------------------------
+-- Table structure for `sys_dict_item`
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_dict_item`;
+CREATE TABLE `sys_dict_item` (
+  `DICT_ID` varchar(30) NOT NULL,
+  `DICT_MEMONI` varchar(128) DEFAULT NULL,
+  `DICT_CODE` varchar(64) NOT NULL,
+  `DICT_TEXT` varchar(512) DEFAULT NULL,
+  `COLOR` varchar(64) DEFAULT NULL,
+  `SORT` int(11) DEFAULT NULL,
+  `NOTE` varchar(1024) DEFAULT NULL,
+  PRIMARY KEY (`DICT_ID`,`DICT_CODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sys_dict_item
+-- ----------------------------
+INSERT INTO `sys_dict_item` VALUES ('201112241000230000010928758633', 'COLOR', 'red', '红色', 'red', '9999', '');
+INSERT INTO `sys_dict_item` VALUES ('201112241001420000010928758633', 'BOOL', '0', '否', '', '9999', '');
+INSERT INTO `sys_dict_item` VALUES ('201112241001420000010928758633', 'BOOL', '1', '是', 'red', '9999', '');
+INSERT INTO `sys_dict_item` VALUES ('201112241004260000010928758633', 'SYS_LOG_TYPE', '00010001', '系统启动', '', '9999', '');
+INSERT INTO `sys_dict_item` VALUES ('201112241004260000010928758633', 'SYS_LOG_TYPE', '00010002', '系统停止', '', '9999', '');
+INSERT INTO `sys_dict_item` VALUES ('201112241004260000010928758633', 'SYS_LOG_TYPE', '00020001', '用户登录-WEB', '', '9999', '');
+INSERT INTO `sys_dict_item` VALUES ('201112241004260000010928758633', 'SYS_LOG_TYPE', '00020002', '用户登出-WEB', '', '9999', '');
+INSERT INTO `sys_dict_item` VALUES ('201112241004260000010928758633', 'SYS_LOG_TYPE', '00020003', '用户登录-API', '', '9999', '');
+INSERT INTO `sys_dict_item` VALUES ('201112241004260000010928758633', 'SYS_LOG_TYPE', '00020004', '用户登出-API', '', '9999', '');
+INSERT INTO `sys_dict_item` VALUES ('201112241004260000010928758633', 'SYS_LOG_TYPE', '00030001', '应用处理', '', '9999', '');
+INSERT INTO `sys_dict_item` VALUES ('201112242515800000102042989663', 'USER_OFFICER_TYPE', '0001', '主岗', 'red', '9999', '');
+INSERT INTO `sys_dict_item` VALUES ('201112242515800000102042989663', 'USER_OFFICER_TYPE', '0002', '兼任', '', '9999', '');
+INSERT INTO `sys_dict_item` VALUES ('201112242311590000010204298967', 'SEX', '0001', '男', '', '9999', '');
+INSERT INTO `sys_dict_item` VALUES ('201112242311590000010204298967', 'SEX', '0002', '女', '', '9999', '');
+INSERT INTO `sys_dict_item` VALUES ('201310311413190000010848095950', 'REST_VERSION', '1.0.0', '1.0.0', '', '9999', '');
+INSERT INTO `sys_dict_item` VALUES ('201804271508400000010559203238', 'CLIENT_TYPE', '0', '其他', '', '9999', '');
+INSERT INTO `sys_dict_item` VALUES ('201804271508400000010559203238', 'CLIENT_TYPE', '1', 'Web', '', '9999', '');
+INSERT INTO `sys_dict_item` VALUES ('201804271508400000010559203238', 'CLIENT_TYPE', '2', 'Android', '', '9999', '');
+INSERT INTO `sys_dict_item` VALUES ('201804271508400000010559203238', 'CLIENT_TYPE', '3', 'iOS', '', '9999', '');
+
+-- ----------------------------
+-- Table structure for `sys_dict_mapping`
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_dict_mapping`;
+CREATE TABLE `sys_dict_mapping` (
+  `DICT_MAPPING_ID` varchar(30) NOT NULL,
+  `DICT_MAPPING_MEMONI` varchar(128) DEFAULT NULL,
+  `DICT_MAPPING_NAME` varchar(128) DEFAULT NULL,
+  `NOTE` varchar(1024) DEFAULT NULL,
+  PRIMARY KEY (`DICT_MAPPING_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sys_dict_mapping
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `sys_dict_mapping_item`
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_dict_mapping_item`;
+CREATE TABLE `sys_dict_mapping_item` (
+  `DICT_MAPPING_ID` varchar(30) NOT NULL,
+  `DICT_MAPPING_MEMONI` varchar(128) DEFAULT NULL,
+  `OLD_CODE` varchar(64) NOT NULL,
+  `OLD_TEXT` varchar(512) DEFAULT NULL,
+  `NEW_CODE` varchar(64) NOT NULL,
+  `NEW_TEXT` varchar(512) DEFAULT NULL,
+  `SORT` int(11) DEFAULT NULL,
+  `NOTE` varchar(1024) DEFAULT NULL,
+  PRIMARY KEY (`DICT_MAPPING_ID`,`OLD_CODE`,`NEW_CODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sys_dict_mapping_item
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `sys_job`
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_job`;
+CREATE TABLE `sys_job` (
+  `JOB_ID` varchar(30) NOT NULL,
+  `JOB_NAME` varchar(128) DEFAULT NULL,
+  `JOB_CLASS_NAME` varchar(128) DEFAULT NULL,
+  `NEXT_TIME` varchar(14) DEFAULT NULL,
+  `RUN_INTERVAL` int(11) DEFAULT NULL,
+  `IS_ON_TIME` varchar(1) DEFAULT NULL,
+  `IS_DISABLE` varchar(1) DEFAULT NULL,
+  `NOTE` varchar(1024) DEFAULT NULL,
+  PRIMARY KEY (`JOB_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sys_job
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `sys_log`
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_log`;
+CREATE TABLE `sys_log` (
+  `LOG_ID` varchar(30) NOT NULL,
+  `APP_ID` varchar(30) DEFAULT NULL,
+  `USER_ID` varchar(30) DEFAULT NULL,
+  `USER_NAME` varchar(32) DEFAULT NULL,
+  `LOG_TYPE` varchar(64) DEFAULT NULL,
+  `LOG_CONTENT` varchar(1024) DEFAULT NULL,
+  `SERVER_IP` varchar(32) DEFAULT NULL,
+  `CLIENT_TYPE` varchar(64) DEFAULT NULL,
+  `CLIENT_VERSION` varchar(32) DEFAULT NULL,
+  `CLIENT_IP` varchar(32) DEFAULT NULL,
+  `REFERENCE_TYPE` varchar(64) DEFAULT NULL,
+  `REFERENCE_ID` varchar(30) DEFAULT NULL,
+  `LOG_TIME` varchar(14) DEFAULT NULL,
+  PRIMARY KEY (`LOG_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sys_log
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `sys_menu`
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_menu`;
+CREATE TABLE `sys_menu` (
+  `MENU_ID` varchar(30) NOT NULL,
+  `MENU_PID` varchar(30) DEFAULT NULL,
+  `MENU_NAME` varchar(128) DEFAULT NULL,
+  `MENU_SRC` varchar(256) DEFAULT NULL,
+  `CLASS_METHODS` varchar(1024) DEFAULT NULL,
+  `SORT` int(11) DEFAULT NULL,
+  `IS_DEL` varchar(1) DEFAULT NULL,
+  `NOTE` varchar(1024) DEFAULT NULL,
+  PRIMARY KEY (`MENU_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sys_menu
+-- ----------------------------
+INSERT INTO `sys_menu` VALUES ('201112241010270000010246740694', '', '系统管理', '', '', '9999', '0', '');
+INSERT INTO `sys_menu` VALUES ('201112241011060000010246740694', '201112241010270000010246740694', '组织机构', '', '', '2', '0', '');
+INSERT INTO `sys_menu` VALUES ('201112241012330000010246740694', '201112241011060000010246740694', '机构管理', '/sys/SysOrgAction.do?method=main', 'com.proj.sys.SysOrgAction@main', '1', '0', '');
+INSERT INTO `sys_menu` VALUES ('201112241013410000010246740694', '201112241011060000010246740694', '部门管理', '/sys/SysDeptAction.do?method=main', 'com.proj.sys.SysDeptAction@main', '2', '0', '');
+INSERT INTO `sys_menu` VALUES ('201112241014270000010246740694', '201112241011060000010246740694', '岗位管理', '/sys/SysOfficerAction.do?method=main', 'com.proj.sys.SysOfficerAction@main', '3', '0', '');
+INSERT INTO `sys_menu` VALUES ('201112241015320000010246740694', '201112241019240000010246740694', '岗位权限管理', '/sys/SysOfficerPrivilegeAction.do?method=main', 'com.proj.sys.SysOfficerPrivilegeAction@main', '4', '0', '');
+INSERT INTO `sys_menu` VALUES ('201112241016190000010246740694', '201112241010270000010246740694', '用户管理', '', '', '1', '0', '');
+INSERT INTO `sys_menu` VALUES ('201112241017350000010246740694', '201112241016190000010246740694', '用户列表管理', '/sys/SysUserAction.do?method=query', 'com.proj.sys.SysUserAction@query', '1', '0', '');
+INSERT INTO `sys_menu` VALUES ('201112241018530000010246740694', '201112241016190000010246740694', '按机构管理用户', '/sys/SysUserAction.do?method=main', 'com.proj.sys.SysUserAction@main', '2', '0', '');
+INSERT INTO `sys_menu` VALUES ('201112241019240000010246740694', '201112241010270000010246740694', '安全管理', '', '', '3', '0', '');
+INSERT INTO `sys_menu` VALUES ('201112241020100000010246740694', '201112241019240000010246740694', '系统菜单管理', '/sys/SysMenuAction.do?method=main', 'com.proj.sys.SysMenuAction@main', '1', '0', '');
+INSERT INTO `sys_menu` VALUES ('201112241021140000010246740694', '201112241019240000010246740694', '页面控件管理', '/sys/SysControlGroupAction.do?method=query', 'com.proj.sys.SysControlGroupAction@query', '2', '0', '');
+INSERT INTO `sys_menu` VALUES ('201112241022460000010246740694', '201112241019240000010246740694', '权限组管理', '/sys/SysPrivilegeGroupAction.do?method=main', 'com.proj.sys.SysPrivilegeGroupAction@main', '3', '0', '');
+INSERT INTO `sys_menu` VALUES ('201112241024070000010246740694', '201112241010270000010246740694', '字典管理', '', '', '4', '0', '');
+INSERT INTO `sys_menu` VALUES ('201112241024480000010246740694', '201112241024070000010246740694', '系统字典管理', '/sys/SysDictAction.do?method=query', 'com.proj.sys.SysDictAction@query', '1', '0', '');
+INSERT INTO `sys_menu` VALUES ('201112241025570000010246740694', '201112241024070000010246740694', '系统字典映射管理', '/sys/SysDictMappingAction.do?method=query', 'com.proj.sys.SysDictMappingAction@main', '2', '0', '');
+INSERT INTO `sys_menu` VALUES ('201112241028080000010246740694', '201112241010270000010246740694', '作业管理', '', '', '9998', '0', '');
+INSERT INTO `sys_menu` VALUES ('201112241028510000010246740694', '201112241028080000010246740694', '作业列表', '/sys/SysJobAction.do?method=query', 'com.proj.sys.SysJobAction@query', '1', '0', '');
+INSERT INTO `sys_menu` VALUES ('201112241030380000010246740694', '201112241010270000010246740694', '运行监控', '', '', '9999', '0', '');
+INSERT INTO `sys_menu` VALUES ('201112241032320000010246740694', '201112241030380000010246740694', '系统监控', '/monitor/SystemMonitorAction.do', '', '1', '0', '');
+INSERT INTO `sys_menu` VALUES ('201112241032570000010246740694', '201112241030380000010246740694', '内存监控', '/monitor/MemoryMonitorAction.do', '', '2', '0', '');
+INSERT INTO `sys_menu` VALUES ('201112241033570000010246740694', '201112241030380000010246740694', '数据库连接池监控', '/monitor/ConnectionPoolMonitorAction.do', '', '3', '0', '');
+INSERT INTO `sys_menu` VALUES ('201112241035440000010246740694', '201112241010270000010246740694', '日志管理', '', '', '9997', '0', '');
+INSERT INTO `sys_menu` VALUES ('201112241036200000010246740694', '201112241035440000010246740694', '系统运行日志', '/sys/SysLogAction.do?method=query', 'com.proj.sys.SysLogAction@query', '1', '0', '');
+INSERT INTO `sys_menu` VALUES ('201112251312560000010424445799', '', '业务系统', '', '', '1', '0', '');
+INSERT INTO `sys_menu` VALUES ('201310311411400000010587005007', '201112241010270000010246740694', 'Rest管理', '', '', '5', '0', '');
+INSERT INTO `sys_menu` VALUES ('201310311412120000010796175097', '201310311411400000010587005007', 'Rest服务接口管理', '/sys/SysRestAction.do?method=query', 'com.proj.sys.SysRestAction@query', '1', '0', '');
+
+-- ----------------------------
+-- Table structure for `sys_officer`
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_officer`;
+CREATE TABLE `sys_officer` (
+  `OFFICER_ID` varchar(30) NOT NULL,
+  `DEPT_ID` varchar(30) DEFAULT NULL,
+  `OFFICER_NAME` varchar(128) DEFAULT NULL,
+  `OFFICER_DUTY` varchar(1024) DEFAULT NULL,
+  `OFFICER_ATTR` varchar(64) DEFAULT NULL,
+  `DATA_WEIGHT` int(11) DEFAULT NULL,
+  `SORT` int(11) DEFAULT NULL,
+  `IS_SYS` varchar(1) DEFAULT NULL,
+  `IS_DEL` varchar(1) DEFAULT NULL,
+  `NOTE` varchar(1024) DEFAULT NULL,
+  PRIMARY KEY (`OFFICER_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sys_officer
+-- ----------------------------
+INSERT INTO `sys_officer` VALUES ('000000000000000000000000000000', '000000000000000000000000000000', '匿名用户', null, null, '8999', '1', '1', '0', null);
+INSERT INTO `sys_officer` VALUES ('111111111111111111111111111111', '000000000000000000000000000000', '超级管理员', null, null, '9999', '2', '1', '0', null);
+INSERT INTO `sys_officer` VALUES ('222222222222222222222222222222', '000000000000000000000000000000', '普通管理员', null, null, '7999', '3', '1', '0', null);
+
+-- ----------------------------
+-- Table structure for `sys_officer_control`
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_officer_control`;
+CREATE TABLE `sys_officer_control` (
+  `OFFICER_CONTROL_ID` varchar(30) NOT NULL,
+  `CONTROL_ID` varchar(30) DEFAULT NULL,
+  `OFFICER_ID` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`OFFICER_CONTROL_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sys_officer_control
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `sys_officer_menu`
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_officer_menu`;
+CREATE TABLE `sys_officer_menu` (
+  `OFFICER_MENU_ID` varchar(30) NOT NULL,
+  `MENU_ID` varchar(30) DEFAULT NULL,
+  `OFFICER_ID` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`OFFICER_MENU_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sys_officer_menu
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `sys_officer_privilege_group`
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_officer_privilege_group`;
+CREATE TABLE `sys_officer_privilege_group` (
+  `OFFICER_PRIVILEGE_GROUP_ID` varchar(30) NOT NULL,
+  `PRIVILEGE_GROUP_ID` varchar(30) DEFAULT NULL,
+  `OFFICER_ID` varchar(30) DEFAULT NULL,
+  `IS_SYS` varchar(1) DEFAULT NULL,
+  PRIMARY KEY (`OFFICER_PRIVILEGE_GROUP_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sys_officer_privilege_group
+-- ----------------------------
+INSERT INTO `sys_officer_privilege_group` VALUES ('000000000000000000000000000000', '000000000000000000000000000000', '000000000000000000000000000000', '1');
+INSERT INTO `sys_officer_privilege_group` VALUES ('111111111111111111111111111111', '111111111111111111111111111111', '111111111111111111111111111111', '1');
+INSERT INTO `sys_officer_privilege_group` VALUES ('222222222222222222222222222222', '222222222222222222222222222222', '222222222222222222222222222222', '1');
+
+-- ----------------------------
+-- Table structure for `sys_org`
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_org`;
+CREATE TABLE `sys_org` (
+  `ORG_ID` varchar(30) NOT NULL,
+  `ORG_PID` varchar(30) DEFAULT NULL,
+  `ORG_CODE` varchar(128) DEFAULT NULL,
+  `ORG_NAME` varchar(128) DEFAULT NULL,
+  `ORG_ATTR` varchar(64) DEFAULT NULL,
+  `SORT` int(11) DEFAULT NULL,
+  `IS_SYS` varchar(1) DEFAULT NULL,
+  `IS_DEL` varchar(1) DEFAULT NULL,
+  `NOTE` varchar(1024) DEFAULT NULL,
+  PRIMARY KEY (`ORG_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sys_org
+-- ----------------------------
+INSERT INTO `sys_org` VALUES ('000000000000000000000000000000', null, '0001', '新机构', null, '1', '1', '0', null);
+
+-- ----------------------------
+-- Table structure for `sys_privilege_control`
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_privilege_control`;
+CREATE TABLE `sys_privilege_control` (
+  `PRIVILEGE_CONTROL_ID` varchar(30) NOT NULL,
+  `PRIVILEGE_GROUP_ID` varchar(30) DEFAULT NULL,
+  `CONTROL_ID` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`PRIVILEGE_CONTROL_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sys_privilege_control
+-- ----------------------------
+INSERT INTO `sys_privilege_control` VALUES ('201112251309450000010424445799', '111111111111111111111111111111', '201112251307400000010424445799');
+INSERT INTO `sys_privilege_control` VALUES ('201112251309450000020424445799', '111111111111111111111111111111', '201112241123520000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251309450000030424445799', '111111111111111111111111111111', '201112241121340000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251309450000040424445799', '111111111111111111111111111111', '201112241120400000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251309450000050424445799', '111111111111111111111111111111', '201112241111110000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251309450000060424445799', '111111111111111111111111111111', '201112241106550000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251309450000070424445799', '111111111111111111111111111111', '201112241106030000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251309450000080424445799', '111111111111111111111111111111', '201112241103450000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251309450000090424445799', '111111111111111111111111111111', '201112241103270000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251309450000100424445799', '111111111111111111111111111111', '201112241103080000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251309450000110424445799', '111111111111111111111111111111', '201112241057500000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251309450000120424445799', '111111111111111111111111111111', '201112241057350000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251309450000130424445799', '111111111111111111111111111111', '201112241057180000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251309450000140424445799', '111111111111111111111111111111', '201112241056510000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251309450000150424445799', '111111111111111111111111111111', '201112241056270000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251309450000160424445799', '111111111111111111111111111111', '201112241056060000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251309450000170424445799', '111111111111111111111111111111', '201112241055280000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251309450000180424445799', '111111111111111111111111111111', '201112241055080000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251309450000190424445799', '111111111111111111111111111111', '201112241054490000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251309450000200424445799', '111111111111111111111111111111', '201112241053250000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251309450000210424445799', '111111111111111111111111111111', '201112241053010000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251309450000220424445799', '111111111111111111111111111111', '201112241052350000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251309450000230424445799', '111111111111111111111111111111', '201112241050380000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251309450000240424445799', '111111111111111111111111111111', '201112241050050000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251309450000250424445799', '111111111111111111111111111111', '201112241049300000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251309450000260424445799', '111111111111111111111111111111', '201112241042580000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251309450000270424445799', '111111111111111111111111111111', '201112241042380000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251309450000280424445799', '111111111111111111111111111111', '201112241042040000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251309450000290424445799', '111111111111111111111111111111', '201112241039250000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251309450000300424445799', '111111111111111111111111111111', '201112241038550000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251309450000310424445799', '111111111111111111111111111111', '201112241038200000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251314120000010424445799', '222222222222222222222222222222', '201112251307400000010424445799');
+INSERT INTO `sys_privilege_control` VALUES ('201112251314120000020424445799', '222222222222222222222222222222', '201112241123520000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251314120000030424445799', '222222222222222222222222222222', '201112241111110000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251314120000040424445799', '222222222222222222222222222222', '201112241106550000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251314120000050424445799', '222222222222222222222222222222', '201112241106030000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251314120000060424445799', '222222222222222222222222222222', '201112241103450000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251314120000070424445799', '222222222222222222222222222222', '201112241103270000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251314120000080424445799', '222222222222222222222222222222', '201112241103080000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251314120000090424445799', '222222222222222222222222222222', '201112241057500000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251314120000100424445799', '222222222222222222222222222222', '201112241057350000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251314120000110424445799', '222222222222222222222222222222', '201112241057180000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251314120000120424445799', '222222222222222222222222222222', '201112241056510000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251314120000130424445799', '222222222222222222222222222222', '201112241056270000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251314120000140424445799', '222222222222222222222222222222', '201112241056060000010246740694');
+INSERT INTO `sys_privilege_control` VALUES ('201112251314120000150424445799', '222222222222222222222222222222', '201112241055080000010246740694');
+
+-- ----------------------------
+-- Table structure for `sys_privilege_group`
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_privilege_group`;
+CREATE TABLE `sys_privilege_group` (
+  `PRIVILEGE_GROUP_ID` varchar(30) NOT NULL,
+  `PRIVILEGE_GROUP_PID` varchar(30) DEFAULT NULL,
+  `GROUP_NAME` varchar(128) DEFAULT NULL,
+  `DATA_WEIGHT` int(11) DEFAULT NULL,
+  `SORT` int(11) DEFAULT NULL,
+  `IS_SYS` varchar(1) DEFAULT NULL,
+  `IS_DEL` varchar(1) DEFAULT NULL,
+  `NOTE` varchar(1024) DEFAULT NULL,
+  PRIMARY KEY (`PRIVILEGE_GROUP_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sys_privilege_group
+-- ----------------------------
+INSERT INTO `sys_privilege_group` VALUES ('000000000000000000000000000000', null, '匿名用户组', '8999', '1', '1', '0', '匿名用户岗位对应的权限组');
+INSERT INTO `sys_privilege_group` VALUES ('111111111111111111111111111111', null, '超级管理员组', '9999', '2', '1', '0', '超级管理员岗位对应的权限组');
+INSERT INTO `sys_privilege_group` VALUES ('222222222222222222222222222222', null, '普通管理员组', '7999', '3', '1', '0', '普通管理员岗位对应的权限组');
+INSERT INTO `sys_privilege_group` VALUES ('333333333333333333333333333333', null, '普通用户组', '0', '4', '1', '0', '普通用户岗位对应的权限组');
+
+-- ----------------------------
+-- Table structure for `sys_privilege_menu`
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_privilege_menu`;
+CREATE TABLE `sys_privilege_menu` (
+  `PRIVILEGE_MENU_ID` varchar(30) NOT NULL,
+  `MENU_ID` varchar(30) DEFAULT NULL,
+  `PRIVILEGE_GROUP_ID` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`PRIVILEGE_MENU_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sys_privilege_menu
+-- ----------------------------
+INSERT INTO `sys_privilege_menu` VALUES ('201112251314020000010424445799', '201112251312560000010424445799', '222222222222222222222222222222');
+INSERT INTO `sys_privilege_menu` VALUES ('201112251314020000020424445799', '201112241010270000010246740694', '222222222222222222222222222222');
+INSERT INTO `sys_privilege_menu` VALUES ('201112251314020000030424445799', '201112241016190000010246740694', '222222222222222222222222222222');
+INSERT INTO `sys_privilege_menu` VALUES ('201112251314020000040424445799', '201112241017350000010246740694', '222222222222222222222222222222');
+INSERT INTO `sys_privilege_menu` VALUES ('201112251314020000050424445799', '201112241018530000010246740694', '222222222222222222222222222222');
+INSERT INTO `sys_privilege_menu` VALUES ('201112251314020000060424445799', '201112241011060000010246740694', '222222222222222222222222222222');
+INSERT INTO `sys_privilege_menu` VALUES ('201112251314020000070424445799', '201112241012330000010246740694', '222222222222222222222222222222');
+INSERT INTO `sys_privilege_menu` VALUES ('201112251314020000080424445799', '201112241013410000010246740694', '222222222222222222222222222222');
+INSERT INTO `sys_privilege_menu` VALUES ('201112251314020000090424445799', '201112241014270000010246740694', '222222222222222222222222222222');
+INSERT INTO `sys_privilege_menu` VALUES ('201112251314020000100424445799', '201112241019240000010246740694', '222222222222222222222222222222');
+INSERT INTO `sys_privilege_menu` VALUES ('201112251314020000110424445799', '201112241015320000010246740694', '222222222222222222222222222222');
+INSERT INTO `sys_privilege_menu` VALUES ('201112251314020000120424445799', '201112241024070000010246740694', '222222222222222222222222222222');
+INSERT INTO `sys_privilege_menu` VALUES ('201112251314020000130424445799', '201112241024480000010246740694', '222222222222222222222222222222');
+INSERT INTO `sys_privilege_menu` VALUES ('201112251314020000140424445799', '201112241025570000010246740694', '222222222222222222222222222222');
+INSERT INTO `sys_privilege_menu` VALUES ('201112251314020000150424445799', '201112241035440000010246740694', '222222222222222222222222222222');
+INSERT INTO `sys_privilege_menu` VALUES ('201112251314020000160424445799', '201112241036200000010246740694', '222222222222222222222222222222');
+INSERT INTO `sys_privilege_menu` VALUES ('201112251314020000170424445799', '201112241030380000010246740694', '222222222222222222222222222222');
+INSERT INTO `sys_privilege_menu` VALUES ('201112251314020000180424445799', '201112241032320000010246740694', '222222222222222222222222222222');
+INSERT INTO `sys_privilege_menu` VALUES ('201112251314020000190424445799', '201112241032570000010246740694', '222222222222222222222222222222');
+INSERT INTO `sys_privilege_menu` VALUES ('201112251314020000200424445799', '201112241033570000010246740694', '222222222222222222222222222222');
+INSERT INTO `sys_privilege_menu` VALUES ('201310311412470000010589663913', '201112241010270000010246740694', '111111111111111111111111111111');
+INSERT INTO `sys_privilege_menu` VALUES ('201310311412470000020207548283', '201112241016190000010246740694', '111111111111111111111111111111');
+INSERT INTO `sys_privilege_menu` VALUES ('201310311412470000030592128262', '201112241017350000010246740694', '111111111111111111111111111111');
+INSERT INTO `sys_privilege_menu` VALUES ('201310311412470000040893462733', '201112241018530000010246740694', '111111111111111111111111111111');
+INSERT INTO `sys_privilege_menu` VALUES ('201310311412470000050892122623', '201112241011060000010246740694', '111111111111111111111111111111');
+INSERT INTO `sys_privilege_menu` VALUES ('201310311412470000060917724681', '201112241012330000010246740694', '111111111111111111111111111111');
+INSERT INTO `sys_privilege_menu` VALUES ('201310311412470000070949441931', '201112241013410000010246740694', '111111111111111111111111111111');
+INSERT INTO `sys_privilege_menu` VALUES ('201310311412470000080349165332', '201112241014270000010246740694', '111111111111111111111111111111');
+INSERT INTO `sys_privilege_menu` VALUES ('201310311412470000090497978787', '201112241019240000010246740694', '111111111111111111111111111111');
+INSERT INTO `sys_privilege_menu` VALUES ('201310311412470000100078407237', '201112241020100000010246740694', '111111111111111111111111111111');
+INSERT INTO `sys_privilege_menu` VALUES ('201310311412470000110359417493', '201112241021140000010246740694', '111111111111111111111111111111');
+INSERT INTO `sys_privilege_menu` VALUES ('201310311412470000120012791142', '201112241022460000010246740694', '111111111111111111111111111111');
+INSERT INTO `sys_privilege_menu` VALUES ('201310311412470000130062182976', '201112241015320000010246740694', '111111111111111111111111111111');
+INSERT INTO `sys_privilege_menu` VALUES ('201310311412470000140053965136', '201112241024070000010246740694', '111111111111111111111111111111');
+INSERT INTO `sys_privilege_menu` VALUES ('201310311412470000150551365252', '201112241024480000010246740694', '111111111111111111111111111111');
+INSERT INTO `sys_privilege_menu` VALUES ('201310311412470000160275642720', '201112241025570000010246740694', '111111111111111111111111111111');
+INSERT INTO `sys_privilege_menu` VALUES ('201310311412470000170432459796', '201310311411400000010587005007', '111111111111111111111111111111');
+INSERT INTO `sys_privilege_menu` VALUES ('201310311412470000180126441076', '201310311412120000010796175097', '111111111111111111111111111111');
+INSERT INTO `sys_privilege_menu` VALUES ('201310311412470000190750270675', '201112241035440000010246740694', '111111111111111111111111111111');
+INSERT INTO `sys_privilege_menu` VALUES ('201310311412470000200299662803', '201112241036200000010246740694', '111111111111111111111111111111');
+INSERT INTO `sys_privilege_menu` VALUES ('201310311412470000210527728678', '201112241028080000010246740694', '111111111111111111111111111111');
+INSERT INTO `sys_privilege_menu` VALUES ('201310311412470000220154030893', '201112241028510000010246740694', '111111111111111111111111111111');
+INSERT INTO `sys_privilege_menu` VALUES ('201310311412470000230758242739', '201112241030380000010246740694', '111111111111111111111111111111');
+INSERT INTO `sys_privilege_menu` VALUES ('201310311412470000240519976236', '201112241032320000010246740694', '111111111111111111111111111111');
+INSERT INTO `sys_privilege_menu` VALUES ('201310311412470000250833994144', '201112241032570000010246740694', '111111111111111111111111111111');
+INSERT INTO `sys_privilege_menu` VALUES ('201310311412470000260708928888', '201112241033570000010246740694', '111111111111111111111111111111');
+
+-- ----------------------------
+-- Table structure for `sys_rest`
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_rest`;
+CREATE TABLE `sys_rest` (
+  `REST_ID` varchar(30) NOT NULL,
+  `REST_NAME` varchar(128) DEFAULT NULL,
+  `REST_METHOD` varchar(256) DEFAULT NULL,
+  `REST_VERSION` varchar(64) DEFAULT NULL,
+  `REST_CLASS_NAME` varchar(256) DEFAULT NULL,
+  `REST_CLASS_METHOD` varchar(128) DEFAULT NULL,
+  `REST_DSCR` varchar(1024) DEFAULT NULL,
+  `IS_AUTH` varchar(1) DEFAULT NULL,
+  `IS_DISABLE` varchar(1) DEFAULT NULL,
+  `NOTE` varchar(1024) DEFAULT NULL,
+  PRIMARY KEY (`REST_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sys_rest
+-- ----------------------------
+INSERT INTO `sys_rest` VALUES ('201804171211530000010741183288', '登录', 'login', '1.0.0', 'api.LoginApi', 'login', '输入: \r\n     login_id：登录账号\r\n     password：登录密码     \r\n输出: \r\n    token：访问令牌         \r\n异常: \r\n     用户名密码不符!', '0', '0', null);
+INSERT INTO `sys_rest` VALUES ('201804181211530000010154859598', '登出', 'logout', '1.0.0', 'api.LogoutApi', 'logout', '输入: \r\n     \r\n     \r\n输出: \r\n     \r\n     \r\n异常:', '1', '0', null);
+INSERT INTO `sys_rest` VALUES ('201804271508190000010369435775', '修改密码', 'self.password.update', '1.0.0', 'api.SelfApi', 'updatePassword', '输入: \r\n     old_password：旧密码\r\n     new_password：新密码\r\n     \r\n输出: \r\n     操作成功\r\n     \r\n异常:', '1', '0', null);
+
+-- ----------------------------
+-- Table structure for `sys_token`
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_token`;
+CREATE TABLE `sys_token` (
+  `TOKEN_ID` varchar(30) NOT NULL,
+  `USER_ID` varchar(30) DEFAULT NULL,
+  `APP_ID` varchar(30) DEFAULT NULL,
+  `TOKEN` varchar(512) DEFAULT NULL,
+  `CLIENT_IP` varchar(32) DEFAULT NULL,
+  `CREATE_TIME` varchar(14) DEFAULT NULL,
+  `UPDATE_TIME` varchar(14) DEFAULT NULL,
+  `EXPIRE_TIME` varchar(14) DEFAULT NULL,
+  PRIMARY KEY (`TOKEN_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sys_token
+-- ----------------------------
+INSERT INTO `sys_token` VALUES ('201804271511260000020631615977', '222222222222222222222222222222', '201804171211530000010741183288', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhdXRoVXNlcklkIjoiMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyIiwiZXhwIjoxNTI0ODk5NDg2Mjc3LCJpYXQiOjE1MjQ4MTMwODYyNzcsImlzcyI6Ind6dyJ9.72a4405a7162d3f60b6fdebfec7645306b95e3dc14d8a8ef7173d4837b769ef7a87fe03729fec0ff8e2c07223ee96297f671246525c2e18e313410f15c4445d9', '127.0.0.1', '20180427151126', null, '20180428151126');
+
+-- ----------------------------
+-- Table structure for `sys_user`
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_user`;
+CREATE TABLE `sys_user` (
+  `USER_ID` varchar(30) NOT NULL,
+  `LOGIN_ID` varchar(128) DEFAULT NULL,
+  `CERT_ID` varchar(128) DEFAULT NULL,
+  `PASSWORD` varchar(32) DEFAULT NULL,
+  `USER_NAME` varchar(32) DEFAULT NULL,
+  `SEX` varchar(64) DEFAULT NULL,
+  `OFFICE_TEL` varchar(128) DEFAULT NULL,
+  `HOME_TEL` varchar(128) DEFAULT NULL,
+  `MOBILE` varchar(128) DEFAULT NULL,
+  `EMAIL` varchar(128) DEFAULT NULL,
+  `DATA_WEIGHT` int(11) DEFAULT NULL,
+  `SORT` int(11) DEFAULT NULL,
+  `IS_DISABLE` varchar(1) DEFAULT NULL,
+  `IS_SYS` varchar(1) DEFAULT NULL,
+  `IS_DEL` varchar(1) DEFAULT NULL,
+  `NOTE` varchar(1024) DEFAULT NULL,
+  PRIMARY KEY (`USER_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sys_user
+-- ----------------------------
+INSERT INTO `sys_user` VALUES ('000000000000000000000000000000', 'anonymous', null, 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', '匿名', '0001', null, null, null, null, '8999', '10000', '0', '1', '0', '预留账号');
+INSERT INTO `sys_user` VALUES ('111111111111111111111111111111', 'super', null, '1b3231655cebb7a1f783eddf27d254ca', '超级管理员', '0001', null, null, null, null, '9999', '10001', '0', '1', '0', '开发方用');
+INSERT INTO `sys_user` VALUES ('222222222222222222222222222222', 'admin', null, '21232f297a57a5a743894a0e4a801fc3', '系统管理员', '0001', '', '', '', null, '7999', '10002', '0', '1', '0', '用户方用');
+
+-- ----------------------------
+-- Table structure for `sys_user_officer`
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_user_officer`;
+CREATE TABLE `sys_user_officer` (
+  `USER_OFFICER_ID` varchar(30) NOT NULL,
+  `OFFICER_ID` varchar(30) DEFAULT NULL,
+  `USER_ID` varchar(30) DEFAULT NULL,
+  `ORG_ID` varchar(30) DEFAULT NULL,
+  `DEPT_ID` varchar(30) DEFAULT NULL,
+  `USER_OFFICER_TYPE` varchar(64) DEFAULT NULL,
+  `IS_SYS` varchar(1) DEFAULT NULL,
+  PRIMARY KEY (`USER_OFFICER_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sys_user_officer
+-- ----------------------------
+INSERT INTO `sys_user_officer` VALUES ('000000000000000000000000000000', '000000000000000000000000000000', '000000000000000000000000000000', '000000000000000000000000000000', '000000000000000000000000000000', '0001', '1');
+INSERT INTO `sys_user_officer` VALUES ('111111111111111111111111111111', '111111111111111111111111111111', '111111111111111111111111111111', '000000000000000000000000000000', '000000000000000000000000000000', '0001', '1');
+INSERT INTO `sys_user_officer` VALUES ('222222222222222222222222222222', '222222222222222222222222222222', '222222222222222222222222222222', '000000000000000000000000000000', '000000000000000000000000000000', '0001', '1');
