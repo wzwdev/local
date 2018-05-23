@@ -1,0 +1,1 @@
+create database if not exists webf default character set utf8 collate utf8_general_ci;
