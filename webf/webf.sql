@@ -582,7 +582,7 @@ CREATE TABLE `sys_rest` (
 -- Records of sys_rest
 -- ----------------------------
 INSERT INTO `sys_rest` VALUES ('201804171211530000010741183288', '登录', 'login', '1.0.0', 'api.LoginApi', 'login', '输入: \r\n     login_id：登录账号\r\n     password：登录密码     \r\n输出: \r\n    token：访问令牌         \r\n异常: \r\n     用户名密码不符!', '0', '0', null);
-INSERT INTO `sys_rest` VALUES ('201804181211530000010154859598', '登出', 'logout', '1.0.0', 'api.LogoutApi', 'logout', '输入: \r\n     \r\n     \r\n输出: \r\n     \r\n     \r\n异常:', '1', '0', null);
+INSERT INTO `sys_rest` VALUES ('201804181211530000010154859598', '登出', 'logout', '1.0.0', 'api.LogoutApi', 'logout', '输入: \r\n     \r\n     \r\n输出: \r\n     \r\n     \r\n异常:', '0', '0', null);
 INSERT INTO `sys_rest` VALUES ('201804271508190000010369435775', '修改密码', 'self.password.update', '1.0.0', 'api.SelfApi', 'updatePassword', '输入: \r\n     old_password：旧密码\r\n     new_password：新密码\r\n     \r\n输出: \r\n     操作成功\r\n     \r\n异常:', '1', '0', null);
 
 -- ----------------------------
