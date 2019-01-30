@@ -179,6 +179,11 @@
 				st = ss[i].split("--");
 			}
 			//appcan end
+			//okhttp begin
+			if (st.length == 3){
+				st = ss[i].trim().substring(0, ss[i].trim().length() - 2).split("--");
+			}
+			//okhttp end
 			if (st.length == 2) {
 				st = st[0].split("\"");
 				if (st.length == 2) {
